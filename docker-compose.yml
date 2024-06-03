@@ -1,0 +1,12 @@
+version: "3"
+services:
+  libretranslate:
+    container_name: libretranslate
+    image: puffer0315/libretranslate-openresty:0.0.1
+    restart: unless-stopped
+    ports:
+      - "443:443"
+    healthcheck:
+      test: ['CMD-SHELL', './venv/bin/python scripts/healthcheck.py']
+    environment:
+      - LT_LOAD_ONLY=en,zh
