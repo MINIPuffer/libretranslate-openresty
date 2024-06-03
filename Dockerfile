@@ -49,5 +49,6 @@ RUN mkdir -p ~/.local/share/argos-translate/packages && \
     unzip -o -d ~/.local/share/argos-translate/packages translate-zh_en-1_9.zip
 
 ADD start.sh .
+RUN chmod +x ./start.sh
 
 ENTRYPOINT [ "./start.sh" ]
